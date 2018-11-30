@@ -61,7 +61,7 @@ public class PermissionManager implements ActivityCompat.OnRequestPermissionsRes
                         Toast.makeText(context, "Permission Granted!", Toast.LENGTH_SHORT).show();
                     }
                 }else{
-                    Toast.makeText(context, "No Permission Granted!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "No Permission Granted!, Grant permission in order to function", Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:

@@ -49,8 +49,12 @@ public class CallRecorderService extends Service {
             recorder.start();
         } catch (IllegalStateException e) {
             e.printStackTrace();
+            Toast.makeText(this, "Unexpected error", Toast.LENGTH_LONG).show();
+
         } catch (IOException e) {
             e.printStackTrace();
+            Toast.makeText(this, "Calling error", Toast.LENGTH_LONG).show();
+
         }
 
         Toast.makeText(this, "Started", Toast.LENGTH_SHORT).show();

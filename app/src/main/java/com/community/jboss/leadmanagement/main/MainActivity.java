@@ -53,6 +53,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import timber.log.Timber;
+
 import static com.community.jboss.leadmanagement.SettingsActivity.PREF_DARK_THEME;
 
 public class MainActivity extends BaseActivity
@@ -220,7 +221,7 @@ public class MainActivity extends BaseActivity
                 navigationItem = MainActivityViewModel.NavigationItem.CONTACTS;
                 break;
             default:
-                Timber.e("Failed to resolve selected navigation item id");
+                Toast.makeText(this, "Unexpected error", Toast.LENGTH_SHORT).show();
                 throw new IllegalArgumentException();
 
         }
@@ -283,6 +284,7 @@ public class MainActivity extends BaseActivity
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
+                Toast.makeText(this, "Google has not been able to sign you in", Toast.LENGTH_SHORT).show();
                 // [START_EXCLUDE]
                 updateUI(null);
                 // [END_EXCLUDE]
